@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-Control" content="no-store" />
+    <title>BeeShard - Case convert</title>
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="./src/lib/css/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="./src/lib/css/fontawesome/all.css">
+	<link rel="stylesheet" href="./src/assets/css/style.css">
+    <!-- JS -->
+    <script src="./src/lib/js/jquery-3.4.1.min.js"></script>
+    <script src="./src/lib/js/bootstrap/bootstrap.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm fixed-top navigation">
+            <div class="container">
+                <a class="navbar-brand" href="#">BeeShard</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html"></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="category.html"></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="#"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container main__content">
+        <div class="page__header">
+            <div class="row">
+                <h1 class="page__title">Case convert</h1>
+            </div>
+        </div>
+        <section class="panel__default">
+            <form onsubmit="converterController.submit();">
+                <div class="panel__form--top">
+                    <div class="row">
+                        <div class="form__group col-md-12">
+                            <label id="result-label" class="label" for="input-name">Enter your text</label>
+                            <textarea id="form-input" rows="5" type="text" class="input__default" name="form-input"></textarea>
+                            <span class="error__alert">Invalid character!</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel__form--bottom">
+                    <button id="reset-button" type="button" class="button__form reset__button"><i class="fas fa-times mr-2 icon__small"></i></i>Reset</button>
+                    <div class="row justify-content-end">
+                        <button id="alternating-button" type="submit" class="button__form" >Alternating</button>
+                        <button id="sentence-button" type="submit" class="button__form" >Sentence</button>
+                        <button id="capitalized-button" type="submit" class="button__form" >Capitalized</button>
+                        <button id="lower-button" type="submit" class="button__form" >Lower</button>
+                        <button id="upper-button" type="submit" class="button__form" >Upper</button>
+
+                    </div>
+                </div>
+            </form>
+        </section>
+        <section class="panel__default">
+            <div class="panel__form--top">
+                <div class="row" style="position: relative">
+                    <div class="form__group col-md-12">
+                        <label id="result-label" class="label" for="input-name">Result</label>
+                        <textarea id="form-input" rows="5" type="text" class="input__default" name="form-input" readonly></textarea>
+                        <span class="tooltiptext hide" id="myTooltip">Copied!</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- <script src="./assets/js/copy.js"></script> -->
+    <!-- <script src="./assets/js/binary2decimal.js"></script> -->
+    <script src="src/js/models/ConverterModel.js"></script>
+    <script src="src/js/controllers/ConverterController.js"></script>
+    <script src="src/js/views/ConverterView.js"></script>
+    <script>
+        let converterController = new ConverterController();
+    </script>
+</body>
+</html>
